@@ -94,17 +94,17 @@
 /***/ (function(module, exports) {
 
 var mySet = function mySet() {
-  this.data = []; // adds new values to set
-
-  this.add = function (value) {
-    if (value != null) {
-      this.data.push(value);
-    }
-  }; //checks if the set has a value or not
-
+  this.data = []; //checks if the set has a value or not
 
   this.has = function (value) {
     return this.data.indexOf(value) !== -1;
+  }; // adds new values to set
+
+
+  this.add = function (value) {
+    if (!this.has(value)) {
+      this.data.push(value);
+    }
   }; //returns all the values
 
 
@@ -158,6 +158,7 @@ var mySet = function mySet() {
 obj.add('1');
 obj.add('2');
 obj.add('3');
+obj.add('2');
 var obj1 = new mySet();
 obj1.add('1');
 obj1.add('2');
