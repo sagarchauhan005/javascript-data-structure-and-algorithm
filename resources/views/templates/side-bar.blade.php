@@ -1,6 +1,6 @@
 <!-- Side navigation -->
 <div class="sidenav">
-    <a href="">- Stacks </a>
+    <a href="{{url('stacks')}}">- Stacks </a>
     <a href="">- Sets </a>
     <a href="">- Queues & Priority Queues </a>
     <a href="">- Binary Search Tree </a>

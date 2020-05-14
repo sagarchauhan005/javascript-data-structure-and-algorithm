@@ -10933,6 +10933,12 @@ a.text-dark:focus {
   }
 }
 
+.navbar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
 .nav-bg-dark {
   background-color: black !important;
 }
@@ -10941,12 +10947,20 @@ a.text-dark:focus {
   color: white !important;
 }
 
-#about-project {
+#about-project,
+#about-code {
   margin-top: 30px;
 }
 
 .content-container {
   padding-left: 30px;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
 }
 
 /* The sidebar menu */
@@ -10966,6 +10980,7 @@ a.text-dark:focus {
   overflow-x: hidden;
   /* Disable horizontal scroll */
   padding-top: 20px;
+  margin-top: 56px;
 }
 
 /* The navigation menu links */
@@ -10987,6 +11002,7 @@ a.text-dark:focus {
 /* Style page content */
 
 .main {
+  margin-top: 50px;
   margin-left: 250px;
   /* Same as the width of the sidebar */
   padding-left: 30px;
