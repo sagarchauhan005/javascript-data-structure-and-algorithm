@@ -86,6 +86,181 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./resources/js/pages/binary-search-traversal.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/pages/binary-search-traversal.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/binary-search.js":
+/*!*********************************************!*\
+  !*** ./resources/js/pages/binary-search.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/graph-search.js":
+/*!********************************************!*\
+  !*** ./resources/js/pages/graph-search.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/graphs.js":
+/*!**************************************!*\
+  !*** ./resources/js/pages/graphs.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/hash-tables.js":
+/*!*******************************************!*\
+  !*** ./resources/js/pages/hash-tables.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/heap-max-min.js":
+/*!********************************************!*\
+  !*** ./resources/js/pages/heap-max-min.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/heap-viz.js":
+/*!****************************************!*\
+  !*** ./resources/js/pages/heap-viz.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/linked-list.js":
+/*!*******************************************!*\
+  !*** ./resources/js/pages/linked-list.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/queue.js":
+/*!*************************************!*\
+  !*** ./resources/js/pages/queue.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var priorityQueue = function priorityQueue() {
+  var collection = [];
+
+  this.print = function () {
+    console.log(collection);
+  };
+
+  this.empty = function () {
+    return collection.length === 0;
+  };
+
+  this.enqueue = function (value) {
+    if (this.empty()) {
+      collection.push(value);
+    } else {
+      var added = false;
+
+      for (var i = 0; i < collection.length; i++) {
+        //console.log(collection[i]);
+        if (value[1] < collection[i][1]) {
+          collection.splice(i, 0, value);
+          added = true;
+          break;
+        }
+      }
+
+      if (!added) {
+        collection.push(value);
+      }
+    }
+  };
+
+  this.dequeue = function () {
+    if (!this.empty()) {
+      return collection.shift();
+    }
+  };
+
+  this.latest = function () {
+    if (!this.empty()) {
+      return collection[0];
+    }
+
+    return "empty queue";
+  };
+
+  this.size = function () {
+    return collection.length;
+  };
+}; // Console test commands
+
+/*
+let myQ = new priorityQueue();
+console.log("Empty");
+console.log(myQ.empty());
+myQ.enqueue(["sagar",1]);
+myQ.enqueue(["chauhan",3]);
+console.log(myQ.print());
+console.log("Size");
+console.log(myQ.size());
+myQ.enqueue(["sanjay",2]);
+console.log(myQ.print());
+myQ.enqueue(["sheetal",4]);
+myQ.enqueue(["kulbhushan",6]);
+myQ.enqueue(["vasudeva",5]);
+console.log("Size");
+console.log(myQ.size());
+myQ.enqueue(["vasudeva",2]);
+console.log("Latest");
+console.log(myQ.latest());
+console.log("Dequeue");
+console.log(myQ.dequeue());
+console.log("Size");
+console.log(myQ.size());
+console.log("FINAL");
+console.log(myQ.print());
+*/
+
+/***/ }),
+
 /***/ "./resources/js/pages/sets.js":
 /*!************************************!*\
   !*** ./resources/js/pages/sets.js ***!
@@ -264,12 +439,21 @@ console.log("Is empty : "+stack.isEmpty());*/
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************!*\
-  !*** multi ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
-  \***************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/pages/binary-search-traversal.js ./resources/js/pages/binary-search.js ./resources/js/pages/graph-search.js ./resources/js/pages/graphs.js ./resources/js/pages/hash-tables.js ./resources/js/pages/heap-max-min.js ./resources/js/pages/heap-viz.js ./resources/js/pages/linked-list.js ./resources/js/pages/queue.js ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/binary-search-traversal.js */"./resources/js/pages/binary-search-traversal.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/binary-search.js */"./resources/js/pages/binary-search.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/graph-search.js */"./resources/js/pages/graph-search.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/graphs.js */"./resources/js/pages/graphs.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/hash-tables.js */"./resources/js/pages/hash-tables.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/heap-max-min.js */"./resources/js/pages/heap-max-min.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/heap-viz.js */"./resources/js/pages/heap-viz.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/linked-list.js */"./resources/js/pages/linked-list.js");
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/queue.js */"./resources/js/pages/queue.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/sets.js */"./resources/js/pages/sets.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/stacks.js */"./resources/js/pages/stacks.js");
 module.exports = __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/sass/app.scss */"./resources/sass/app.scss");
