@@ -1,7 +1,7 @@
 <!-- Side navigation -->
 <div class="sidenav">
     <a href="{{url('stacks')}}">- Stacks </a>
-    <a href="">- Sets </a>
+    <a href="{{url('sets')}}">- Sets </a>
     <a href="">- Queues & Priority Queues </a>
     <a href="">- Binary Search Tree </a>
     <a href="">- Binary Search Tree: Traversal & Height </a>

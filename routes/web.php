@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('pages/index');});
 Route::get('/stacks', function () {return view('pages/stacks');});
+Route::get('/sets', function () {return view('pages/sets');});

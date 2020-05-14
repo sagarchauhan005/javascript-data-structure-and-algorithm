@@ -86,6 +86,96 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./resources/js/pages/sets.js":
+/*!************************************!*\
+  !*** ./resources/js/pages/sets.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var mySet = function mySet() {
+  this.data = []; // adds new values to set
+
+  this.add = function (value) {
+    if (value != null) {
+      this.data.push(value);
+    }
+  }; //checks if the set has a value or not
+
+
+  this.has = function (value) {
+    return this.data.indexOf(value) !== -1;
+  }; //returns all the values
+
+
+  this.values = function () {
+    return this.data;
+  }; //returns union set
+
+
+  this.union = function (ogSet) {
+    var newSet = new mySet();
+    this.data.forEach(function (val) {
+      newSet.add(val);
+    });
+    ogSet.data.forEach(function (val) {
+      newSet.add(val);
+    });
+    return newSet.values();
+  }; //returns intersection set
+
+
+  this.intersection = function (ogSet) {
+    var newSet = new mySet();
+    this.data.forEach(function (val) {
+      if (ogSet.has(val)) {
+        newSet.add(val);
+      }
+    });
+    return newSet.values();
+  }; //returns difference of the two set
+
+
+  this.diff = function (ogSet) {
+    var newSet = new mySet();
+    this.data.forEach(function (val) {
+      if (!ogSet.has(val)) {
+        newSet.add(val);
+      }
+    });
+    return newSet.values();
+  }; //returns subset of two sets
+
+
+  this.subset = function (ogSet) {
+    return this.data.every(function (val) {
+      return ogSet.has(val);
+    });
+  };
+}; // Console test commands
+
+/*var obj = new mySet();
+obj.add('1');
+obj.add('2');
+obj.add('3');
+var obj1 = new mySet();
+obj1.add('1');
+obj1.add('2');
+obj1.add('3');
+obj1.add('4');
+console.log(obj.values());
+console.log(obj1.values());
+console.log("Union");
+console.log(obj.union(obj1));
+console.log("Intersection");
+console.log(obj.intersection(obj1));
+console.log("Difference");
+console.log(obj.diff(obj1));
+console.log("Subset");
+console.log(obj.subset(obj1));*/
+
+/***/ }),
+
 /***/ "./resources/js/pages/stacks.js":
 /*!**************************************!*\
   !*** ./resources/js/pages/stacks.js ***!
@@ -144,21 +234,20 @@ var Stack = function Stack() {
   };
 }; // Test commands in console
 
-
-var stack = new Stack();
+/*var stack = new Stack();
 stack.add("sagar");
 stack.add("chauhan");
 stack.add("is");
 stack.add("awesome");
 console.log(stack.show());
 console.log(stack.top());
-console.log("Is empty : " + stack.isEmpty());
+console.log("Is empty : "+stack.isEmpty());
 console.log("Start popping");
 stack.pop();
 stack.pop();
 stack.pop();
 stack.pop();
-console.log("Is empty : " + stack.isEmpty());
+console.log("Is empty : "+stack.isEmpty());*/
 
 /***/ }),
 
@@ -174,12 +263,13 @@ console.log("Is empty : " + stack.isEmpty());
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************!*\
-  !*** multi ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
-  \**********************************************************************/
+/*!***************************************************************************************************!*\
+  !*** multi ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/sets.js */"./resources/js/pages/sets.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/stacks.js */"./resources/js/pages/stacks.js");
 module.exports = __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/sass/app.scss */"./resources/sass/app.scss");
 

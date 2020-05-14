@@ -6,6 +6,7 @@
             <p>The stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. This means that
                 there is only one end for the stack, which is used to add items and remove items from the structure. The
                 addition of new items in the stack is known as push, and push whilst removing an item is known as pop.</p>
+            <p>Below mentioned is the list of methods written.</p>
             <ul>
                 <li>Push: add an item at the top of the stack.</li>
                 <li>Pop: remove the top item of the stack.</li>

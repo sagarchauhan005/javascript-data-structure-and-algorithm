@@ -48,7 +48,7 @@ var Stack = function () {
 };
 
 // Test commands in console
-var stack = new Stack();
+/*var stack = new Stack();
 stack.add("sagar");
 stack.add("chauhan");
 stack.add("is");
@@ -61,5 +61,5 @@ stack.pop();
 stack.pop();
 stack.pop();
 stack.pop();
-console.log("Is empty : "+stack.isEmpty());
+console.log("Is empty : "+stack.isEmpty());*/
 
