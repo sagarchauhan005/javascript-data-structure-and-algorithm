@@ -4,7 +4,7 @@
     <a href="{{url('sets')}}">- Sets </a>
     <a href="{{url('queue')}}">- Queues & Priority Queues </a>
     <a href="{{url('binary-search')}}">- Binary Search Tree </a>
-    <a href="{{url('binary-search-traversal')}}">- Binary Search Tree: Traversal & Height </a>
+    <a href="{{url('binary-search-traversal')}}">- Binary Search Tree: Traversal</a>
     <a href="{{url('hash-tables')}}">- Hash Tables </a>
     <a href="{{url('linked-list')}}">- Linked List </a>
     <a href="{{url('heap-max-min')}}">- Heap (max and min) </a>

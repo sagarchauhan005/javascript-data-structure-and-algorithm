@@ -104,7 +104,198 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Node = function Node(data) {
+  var left = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  var right = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+  _classCallCheck(this, Node);
+
+  this.data = data;
+  this.right = left;
+  this.left = right;
+};
+
+var binarySearch = /*#__PURE__*/function () {
+  function binarySearch() {
+    _classCallCheck(this, binarySearch);
+
+    this.root = null;
+  }
+
+  _createClass(binarySearch, [{
+    key: "add",
+    value: function add(data) {
+      var node = this.root;
+
+      if (node === null) {
+        this.root = new Node(data);
+        return;
+      } else {
+        var search = function search(node) {
+          if (data < node.data) {
+            if (node.left == null) {
+              node.left = new Node(data);
+              return;
+            } else if (node.left !== null) {
+              return search(node.left);
+            }
+          } else if (data > node.data) {
+            if (node.right == null) {
+              node.right = new Node(data);
+              return;
+            } else if (node.right !== null) {
+              return search(node.right);
+            }
+          } else {
+            return null;
+          }
+        };
+
+        return search(node);
+      }
+    }
+  }, {
+    key: "find",
+    value: function find(data) {
+      var current = this.root;
+
+      while (current.data !== data) {
+        if (data < current.data) {
+          current = current.left;
+        } else if (data > current.data) {
+          current = current.right;
+        }
+      }
+
+      if (current === null) {
+        return null;
+      }
+
+      return current;
+    }
+  }, {
+    key: "remove",
+    value: function remove(data) {
+      var removeNode = function removeNode(node, data) {
+        //console.log("node");
+        //console.log(node);
+        if (node == null) {
+          return null;
+        }
+
+        if (node.data == data) {
+          // node has no children
+          if (node.left == null && node.right == null) {
+            return null;
+          } //node has no right children
+
+
+          if (node.right == null) {
+            return node.left;
+          } // node has no left children
+
+
+          if (node.left == null) {
+            return node.right;
+          } // node has two children
+
+
+          var tempNode = node.right;
+
+          while (node.left != null) {
+            tempNode = tempNode.left;
+          }
+
+          node.data = tempNode.data;
+          node.right = removeNode(node.right, tempNode.data);
+          return node;
+        } else if (data < node.data) {
+          node.left = removeNode(node.left, data);
+          return node;
+        } else {
+          node.right = removeNode(node.right, data);
+          return node;
+        }
+      };
+
+      this.root = removeNode(this.root, data);
+    }
+  }, {
+    key: "findMinHeight",
+    value: function findMinHeight() {
+      var node = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.root;
+
+      if (node == null) {
+        return -1;
+      }
+
+      var left = this.findMinHeight(node.left); //console.log("Left : "+left);
+
+      var right = this.findMinHeight(node.right); //console.log("Right : "+right);
+
+      if (left < right) {
+        return left + 1;
+      } else {
+        return right + 1;
+      }
+    }
+  }, {
+    key: "findMaxHeight",
+    value: function findMaxHeight() {
+      var node = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.root;
+
+      if (node == null) {
+        return -1;
+      }
+
+      var left = this.findMaxHeight(node.left); //console.log("Left : "+left);
+
+      var right = this.findMaxHeight(node.right); //console.log("Right : "+right);
+
+      if (left > right) {
+        return left + 1;
+      } else {
+        return right + 1;
+      }
+    }
+  }, {
+    key: "isBalanced",
+    value: function isBalanced() {
+      return this.findMinHeight() >= this.findMaxHeight() - 1;
+    }
+  }]);
+
+  return binarySearch;
+}();
+/*
+let myTree = new binarySearch();
+console.log(myTree);
+myTree.add(100);
+myTree.add(70);
+myTree.add(200);
+myTree.add(50);
+myTree.add(40);
+myTree.add(345);
+myTree.add(150);
+myTree.add(210);
+myTree.add(250);
+console.log(myTree);
+console.log("Find");
+console.log(myTree.find(50));
+console.log(myTree.find(70));
+console.log("Remove 70");
+console.log(myTree.remove(70));
+console.log(myTree);
+console.log("Min Height : "+myTree.findMinHeight());
+console.log("Max Height : "+myTree.findMaxHeight());
+console.log("isBalanced : "+myTree.isBalanced());
+*/
 
 /***/ }),
 
