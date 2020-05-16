@@ -576,18 +576,93 @@ console.log(ht.lookup('rex'));
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+// left child: i * 2
+// right child: i * 2 + 1
+// parent: i / 2
+var MinHeap = function MinHeap() {
+  var heap = [null];
 
+  this.insert = function (data) {
+    heap.push(data);
 
-/***/ }),
+    if (heap.length > 2) {
+      var last = heap.length - 1;
+      console.log("Last Outside : " + last);
 
-/***/ "./resources/js/pages/heap-viz.js":
-/*!****************************************!*\
-  !*** ./resources/js/pages/heap-viz.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+      while (heap[last] < heap[Math.floor(last / 2)]) {
+        console.log("Last Inside : " + last);
 
+        if (last >= 1) {
+          var _ref = [heap[last], heap[Math.floor(last / 2)]];
+          heap[Math.floor(last / 2)] = _ref[0];
+          heap[last] = _ref[1];
 
+          if (Math.floor(last / 2) > 1) {
+            last = Math.floor(last / 2);
+            console.log("Last Inside if : " + last);
+          } else {
+            break;
+          }
+        }
+      }
+    }
+  };
+
+  this.print = function () {
+    console.log(heap);
+  };
+};
+
+var MaxHeap = function MaxHeap() {
+  var heap = [null];
+
+  this.insert = function (data) {
+    heap.push(data);
+
+    if (heap.length > 2) {
+      var last = heap.length - 1; //let parent = Math.floor(last/2);
+
+      while (heap[last] > heap[Math.floor(last / 2)]) {
+        if (last >= 1) {
+          var _ref2 = [heap[last], heap[Math.floor(last / 2)]];
+          heap[Math.floor(last / 2)] = _ref2[0];
+          heap[last] = _ref2[1];
+
+          if (Math.floor(last / 2) > 1) {
+            last = Math.floor(last / 2);
+          } else {
+            break;
+          }
+        }
+      }
+    }
+  };
+
+  this.print = function () {
+    console.log(heap);
+  };
+};
+/*let newMin = new MinHeap();
+newMin.insert(100);
+newMin.insert(50);
+newMin.insert(120);
+newMin.insert(10);
+newMin.insert(250);
+newMin.insert(70);
+newMin.insert(75);
+console.log("Print Min Heap");
+newMin.print();
+
+let newMax = new MaxHeap();
+newMax.insert(100);
+newMax.insert(50);
+newMax.insert(120);
+newMax.insert(10);
+newMax.insert(250);
+newMax.insert(70);
+newMax.insert(75);
+console.log("Print Max Heap");
+newMax.print();*/
 
 /***/ }),
 
@@ -991,9 +1066,9 @@ console.log("Is empty : "+stack.isEmpty());*/
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/pages/binary-search-traversal.js ./resources/js/pages/binary-search.js ./resources/js/pages/graph-search.js ./resources/js/pages/graphs.js ./resources/js/pages/hash-tables.js ./resources/js/pages/heap-max-min.js ./resources/js/pages/heap-viz.js ./resources/js/pages/linked-list.js ./resources/js/pages/queue.js ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/pages/binary-search-traversal.js ./resources/js/pages/binary-search.js ./resources/js/pages/graph-search.js ./resources/js/pages/graphs.js ./resources/js/pages/hash-tables.js ./resources/js/pages/heap-max-min.js ./resources/js/pages/linked-list.js ./resources/js/pages/queue.js ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1003,7 +1078,6 @@ __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and A
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/graphs.js */"./resources/js/pages/graphs.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/hash-tables.js */"./resources/js/pages/hash-tables.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/heap-max-min.js */"./resources/js/pages/heap-max-min.js");
-__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/heap-viz.js */"./resources/js/pages/heap-viz.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/linked-list.js */"./resources/js/pages/linked-list.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/queue.js */"./resources/js/pages/queue.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/sets.js */"./resources/js/pages/sets.js");
