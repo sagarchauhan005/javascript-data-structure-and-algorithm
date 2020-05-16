@@ -3,9 +3,10 @@
     <div class="row">
         <div id="about-code">
             <h4><b>Sets</b></h4>
-            <p>A queue is another linear data structure which follows the FIFO principle. A queue allows two basic
-                operations on the collection. The first one is enqueue which allows us to add an item to the back of the
-                queue. The second one is dequeue which allows us to remove an item from the front of the queue</p>
+            <p>By definition, a heap is a specialized tree data structure that supports a heap property. A heap property is
+                defined in such a way that the root of a heap structure will be either smaller or larger than its child nodes.
+                If the parent node is greater than the child nodes, then it is known as max-heap and if the parent node is
+                smaller than the child nodes then it is known as min-heap</p>
             <p>Below mentioned is the list of methods written.</p>
             <ul>
                 <li>Enqueue: add a queue</li>
