@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div id="about-code">
-            <h4><b>Sets</b></h4>
+            <h4><b>Binary Search Tree</b></h4>
             <p>A binary search tree (BST) is a special type of binary tree where the nodes are stored in a sorted manner.
                 It is sorted in such a way that at any given point, a node value must be greater than or equal to the left
                 child node value and smaller than the right child node value. Each node has to satisfy this property to

@@ -93,7 +93,162 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Node = function Node(data) {
+  var left = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  var right = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+  _classCallCheck(this, Node);
+
+  this.data = data;
+  this.right = left;
+  this.left = right;
+};
+
+var binarySearch = /*#__PURE__*/function () {
+  function binarySearch() {
+    _classCallCheck(this, binarySearch);
+
+    this.root = null;
+  }
+
+  _createClass(binarySearch, [{
+    key: "add",
+    value: function add(data) {
+      var node = this.root;
+
+      if (node === null) {
+        this.root = new Node(data);
+        return;
+      } else {
+        var search = function search(node) {
+          if (data < node.data) {
+            if (node.left == null) {
+              node.left = new Node(data);
+              return;
+            } else if (node.left !== null) {
+              return search(node.left);
+            }
+          } else if (data > node.data) {
+            if (node.right == null) {
+              node.right = new Node(data);
+              return;
+            } else if (node.right !== null) {
+              return search(node.right);
+            }
+          } else {
+            return null;
+          }
+        };
+
+        return search(node);
+      }
+    }
+  }, {
+    key: "inorder",
+    value: function inorder() {
+      if (this.root == null) {
+        return null;
+      } else {
+        var traversalInOrder = function traversalInOrder(node) {
+          node.left && traversalInOrder(node.left);
+          result.push(node);
+          node.right && traversalInOrder(node.right);
+        };
+
+        var result = [];
+        traversalInOrder(this.root);
+        return result;
+      }
+    }
+  }, {
+    key: "preorder",
+    value: function preorder() {
+      if (this.root == null) {
+        return null;
+      } else {
+        var traversalPreOrder = function traversalPreOrder(node) {
+          result.push(node);
+          node.left && traversalPreOrder(node.left);
+          node.right && traversalPreOrder(node.right);
+        };
+
+        var result = [];
+        traversalPreOrder(this.root);
+        return result;
+      }
+    }
+  }, {
+    key: "postorder",
+    value: function postorder() {
+      if (this.root == null) {
+        return null;
+      } else {
+        var traversalPostOrder = function traversalPostOrder(node) {
+          node.left && traversalPostOrder(node.left);
+          node.right && traversalPostOrder(node.right);
+          result.push(node);
+        };
+
+        var result = [];
+        traversalPostOrder(this.root);
+        return result;
+      }
+    }
+  }, {
+    key: "levelOrder",
+    value: function levelOrder() {
+      var result = [];
+      var queue = [];
+
+      if (this.root != null) {
+        queue.push(this.root);
+
+        while (queue.length > 0) {
+          var node = queue.shift();
+          result.push(node.data);
+
+          if (node.left != null) {
+            queue.push(node.left);
+          }
+
+          if (node.right != null) {
+            queue.push(node.right);
+          }
+        }
+
+        return result;
+      } else {
+        return null;
+      }
+    }
+  }]);
+
+  return binarySearch;
+}();
+/*
+let myTree = new binarySearch();
+console.log(myTree);
+myTree.add(100);
+myTree.add(70);
+myTree.add(200);
+myTree.add(50);
+myTree.add(40);
+myTree.add(345);
+myTree.add(150);
+myTree.add(210);
+myTree.add(250);
+console.log(myTree);
+console.log(myTree.inorder());
+console.log(myTree.preorder());
+console.log(myTree.postorder());
+console.log(myTree.levelOrder());
+*/
 
 /***/ }),
 
