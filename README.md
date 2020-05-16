@@ -1,6 +1,6 @@
 ## Javascript Data Structure and Algorithm
 
-I started this project while learning **Data Structures and Algorithms** using Javascript and though of putting it out as a website for others to use it and interact with it to try themselves how the code is working.
+I started this project while learning **Data Structures and Algorithms** using Javascript and thought of putting it out as a website for others to use it and interact with it to try themselves how the code is working.
 Below mentioned is the list of programs written.
 
 - Stacks

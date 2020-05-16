@@ -3,7 +3,7 @@
     <div class="row">
         <div id="about-project">
             <h4><b>Javascript Data Structure and Algorithm</b></h4>
-            <p>I started this project while learning <b>Data Structures and Algorithms</b> using Javascript and though of putting it out as a website for others to use it and interact with it to try themselves how the code is working.
+            <p>I started this project while learning <b>Data Structures and Algorithms</b> using Javascript and thought of putting it out as a website for others to use it and interact with it to try themselves how the code is working.
                 Below mentioned is the list of programs written.</p>
             <ul>
                 <li>Stacks </li>
