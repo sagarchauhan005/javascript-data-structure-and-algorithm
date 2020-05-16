@@ -461,18 +461,47 @@ console.log("isBalanced : "+myTree.isBalanced());
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function bfs(graph, root) {
+  var nodesLen = {};
 
+  for (var i = 0; i < graph.length; i++) {
+    nodesLen[i] = Infinity;
+  }
 
-/***/ }),
+  nodesLen[root] = 0;
+  var queue = [root];
+  var current;
 
-/***/ "./resources/js/pages/graphs.js":
-/*!**************************************!*\
-  !*** ./resources/js/pages/graphs.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+  while (queue.length !== 0) {
+    current = queue.shift(); //console.log("Current : "+current);
 
+    var curConnected = graph[current];
+    var neighborsId = [];
+    var connectIndex = curConnected.indexOf(1);
 
+    while (connectIndex !== -1) {
+      neighborsId.push(connectIndex);
+      connectIndex = curConnected.indexOf(1, connectIndex + 1);
+    }
+
+    for (var j = 0; j < neighborsId.length; j++) {
+      if (nodesLen[neighborsId[j]] === Infinity) {
+        //console.log("Before");
+        //console.log(nodesLen);
+        nodesLen[neighborsId[j]] = nodesLen[current] + 1; //console.log("After");
+        //console.log(nodesLen);
+        //console.log("NeiId : "+neighborsId[j]);
+
+        queue.push(neighborsId[j]);
+        break;
+      }
+    }
+  }
+
+  return nodesLen;
+}
+
+var exBFSGraph = [[0, 1, 1, 1, 0], [0, 0, 1, 0, 0], [1, 1, 0, 0, 0], [0, 0, 0, 1, 0], [0, 1, 0, 0, 0]]; //console.log(bfs(exBFSGraph, 1));
 
 /***/ }),
 
@@ -1066,16 +1095,15 @@ console.log("Is empty : "+stack.isEmpty());*/
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/pages/binary-search-traversal.js ./resources/js/pages/binary-search.js ./resources/js/pages/graph-search.js ./resources/js/pages/graphs.js ./resources/js/pages/hash-tables.js ./resources/js/pages/heap-max-min.js ./resources/js/pages/linked-list.js ./resources/js/pages/queue.js ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/pages/binary-search-traversal.js ./resources/js/pages/binary-search.js ./resources/js/pages/graph-search.js ./resources/js/pages/hash-tables.js ./resources/js/pages/heap-max-min.js ./resources/js/pages/linked-list.js ./resources/js/pages/queue.js ./resources/js/pages/sets.js ./resources/js/pages/stacks.js ./resources/sass/app.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/binary-search-traversal.js */"./resources/js/pages/binary-search-traversal.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/binary-search.js */"./resources/js/pages/binary-search.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/graph-search.js */"./resources/js/pages/graph-search.js");
-__webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/graphs.js */"./resources/js/pages/graphs.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/hash-tables.js */"./resources/js/pages/hash-tables.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/heap-max-min.js */"./resources/js/pages/heap-max-min.js");
 __webpack_require__(/*! /home/sagar/Desktop/Sagar Projects/Data Structures and Algorithms/javascript-ds-and-algo/resources/js/pages/linked-list.js */"./resources/js/pages/linked-list.js");

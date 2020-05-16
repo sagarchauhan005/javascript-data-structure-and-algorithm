@@ -14,8 +14,6 @@
                 <li>Hash Tables </li>
                 <li>Linked List </li>
                 <li>Heap (max and min) </li>
-                <li>Heap visualization </li>
-                <li>Graphs: adjacency list, adjacency matrix, incidence matrix </li>
                 <li>Graphs: breadth-first search</li>
             </ul>
 

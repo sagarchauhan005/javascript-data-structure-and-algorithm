@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div id="about-code">
-            <h4><b>Sets</b></h4>
+            <h4><b>Linked List</b></h4>
             <p>A linked list is a linear data structure which is a collection of data elements also known as nodes and can
                 have varying sizes. Usually, listed items are connected through a pointer which is known as a link and
                 hence it is known as a linked list. In a linked list, one list element links to the next element through a

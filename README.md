@@ -11,12 +11,32 @@ Below mentioned is the list of programs written.
 - Hash Tables
 - Linked List
 - Heap (max and min)
-- Heap visualization
-- Graphs: adjacency list, adjacency matrix, incidence matrix
 - Graphs: breadth-first search
 
+#Getting Started
+Click on any link, check the code, right click to inspect element and write commands in **Console**.
+
+#Screenshots
+![Imgur](https://i.imgur.com/bUSw9ZY.png)
+
+![Imgur](https://i.imgur.com/JzTS9z8.png)
+
+![Imgur](https://i.imgur.com/Qzxu6vP.png)
+
+![Imgur](https://i.imgur.com/aRpE4U7.png)
+
+![Imgur](https://i.imgur.com/VoO0J2y.png)
+
+![Imgur](https://i.imgur.com/33COo45.png)
+
+![Imgur](https://i.imgur.com/H88PwY1.png)
+
+![Imgur](https://i.imgur.com/NKEEdge.png)
+
+![Imgur](https://i.imgur.com/6HBcJVt.png)
 
 Special thanks to [freecodecamp.org](https://www.freecodecamp.org/) for putting out this [video](https://www.youtube.com/watch?v=t2CEgPsws3U). It helped a lot. 
+Pro tip : To easily understand any algorithm and visualize it [visit](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html) 
 
 # Author
 

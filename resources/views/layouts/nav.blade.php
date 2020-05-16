@@ -1,3 +1,5 @@
 <nav class="navbar navbar-light nav-bg-dark">
-    <span class="navbar-brand mb-0 h1">Data structure and Algorithm</span>
+    <a href="/">
+        <span class="navbar-brand mb-0 h1">Javascript Data structure and Algorithm</span>
+    </a>
 </nav>
