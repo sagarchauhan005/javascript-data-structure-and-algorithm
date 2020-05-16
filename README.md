@@ -13,10 +13,10 @@ Below mentioned is the list of programs written.
 - Heap (max and min)
 - Graphs: breadth-first search
 
-##Getting Started
+# Getting Started
 Click on any link, check the code, right click to inspect element and write commands in **Console**.
 
-##Screenshots
+# Screenshots
 ![Imgur](https://i.imgur.com/bUSw9ZY.png)
 
 ![Imgur](https://i.imgur.com/JzTS9z8.png)
